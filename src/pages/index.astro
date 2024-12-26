@@ -7,11 +7,86 @@ import Layout from '../layouts/Layout.astro';
   description="We're building tools to help you better organize & make smarter insurance decisions. Join us on this journey."
 >
   <div class="container hero">
-    <h1>Welcome to PoliSync</h1>
-    <p>
-    Easily organize and access all your insurance policies from different providers in one place.
-    </p>
-    <a href="https://app.polisync.de" class="cta" target="_blank">Try the app — it’s free!</a>
+    <div class="hero-content">
+      <h1>Your insurance simplified</h1>
+      <p>Smart tools for policyholders and insurance professionals.</p>
+      <a href="/solutions" class="cta">Check out our solutions</a>
+    </div>
 
+    <div class="hero-illustration">
+      <img 
+        src="/assets/site-illustration.svg" 
+        alt="PoliSync app organizing insurance documents"
+        width="800"
+        height="400"
+      />
+    </div>
   </div>
 </Layout>
+
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 3rem;
+  }
+
+  .hero-illustration {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-illustration img {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  @media (min-width: 1024px) {
+    .hero {
+      flex-direction: row;
+      align-items: center;
+      padding: 4rem 2rem;
+      gap: 4rem;
+    }
+
+    .hero-content {
+      flex: 1;
+      text-align: left;
+      margin: 0;
+    }
+
+    .hero-illustration {
+      flex: 1;
+      margin: 0;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+    }
+  }
+</style>
