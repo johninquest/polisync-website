@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Imprint">
+  <div class="container">
+    <div class="hero">
+      <h1>Imprint</h1>
+      <p>This is the imprint page of PoliSync.</p>
+    </div>
+    <div class="content">
+      <h3>Company Information</h3>
+      <p>PoliSync GbR</p>
+      <p>[Street Address]</p>
+      <p>[City, State, Post Code]</p>
+      <p>[Country]</p>
+      <p>Email: [email@example.com]</p>
+      <p>Phone: [+XX XXX XXXXXXX]</p>
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+  .content {
+    margin-top: 2rem;
+  }
+
+  .content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+  }
+</style>

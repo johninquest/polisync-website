@@ -11,7 +11,7 @@ import Layout from "../layouts/Layout.astro";
       <div class="solution-card app-card">
         <div class="solution-content">
           <div class="solution-header">
-            <p class="subtitle">For Individual Policyholders</p>
+            <p class="subtitle">For You <br>(Policyholder)</p>
           </div>
 
           <div class="app-preview">
@@ -131,9 +131,9 @@ import Layout from "../layouts/Layout.astro";
             <a href="https://polisync.app" class="cta" target="_blank"
               >Try the app — it’s free!</a
             >
-            <p class="beta-text">
+            <!-- <p class="beta-text">
               We're just getting started! Join our early access program.
-            </p>
+            </p> -->
           </div>
         </div>
       </div>
@@ -252,7 +252,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
           </div>
 
-          <a href="#" onclick="alert('Coming soon!')" class="cta-button">Contact Us</a>
+          <a href="#" onclick="return false" class="cta-button disabled">Contact Us</a>
         </div>
       </div>
     </div>
@@ -366,6 +366,11 @@ import Layout from "../layouts/Layout.astro";
 
   .cta-button:hover {
     background: #0d3f6b;
+  } 
+
+  .cta-button.disabled {
+    background: #cccccc;
+    cursor: not-allowed;
   }
 
   .beta-text {
