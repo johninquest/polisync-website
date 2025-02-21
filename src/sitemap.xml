@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home Page -->
+  <url>
+    <loc>https://www.yourdomain.com/</loc>
+    <lastmod>2025-02-21</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Bundestagswahl 2025 Countdown Page --> 
+    <url>
+    <loc>https://www.polisync.de/about</loc>
+    <lastmod>2025-02-19T15:30:00+00:00</lastmod>
+    <priority>0.8</priority>
+  </url> 
+     <url>
+    <loc>https://www.polisync.de/solutions</loc>
+    <lastmod>2025-02-19T15:30:00+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.polisync.de/countdown-bundestagswahl-2025</loc>
+    <lastmod>2025-02-20T23:30:00+00:00</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Voting Registration & Checklist Page -->
+<!--   <url>
+    <loc>https://www.yourdomain.com/voting-registration-checklist</loc>
+    <lastmod>2025-02-21</lastmod>
+    <priority>0.7</priority>
+  </url> -->
+
+  <!-- Find Your Polling Place Page -->
+<!--   <url>
+    <loc>https://www.yourdomain.com/find-polling-place</loc>
+    <lastmod>2025-02-21</lastmod> 
+    <priority>0.7</priority>
+  </url> -->
+
+  <!-- Official Election Information Page (Bundeswahlleiterin) -->
+  <url>
+    <loc>https://www.bundeswahlleiterin.de/en/bundestagswahlen/2025.html</loc>
+    <lastmod>2025-02-20T23:30:00+00:00</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
