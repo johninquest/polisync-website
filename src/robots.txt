@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://polisync.de/sitemap.xml

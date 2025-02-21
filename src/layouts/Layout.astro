@@ -1,28 +1,37 @@
 ---
 export interface Props {
   title: string;
-  description?: string;
+  description?: string; 
+  keywords?: string;
 }
 
-const { title, description } = Astro.props as Props; 
-import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+const { title, description } = Astro.props as Props;
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <meta name="description" content={description} /> 
+    <meta name="keywords" content="Bundestagswahl 2025, German elections, German federal elections, voting information, election countdown, Insuranace app, PoliSync" />
+    <meta name="author" content="PoliSync">
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <link
+    <!--     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
+    /> -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    /> 
+    />
     <GoogleAnalytics />
     <title>{title}</title>
   </head>
@@ -33,6 +42,7 @@ import GoogleAnalytics from '../components/GoogleAnalytics.astro';
         <div class="nav-links">
           <a href="/about">About</a>
           <a href="/solutions">Solutions</a>
+          <a href="/countdown">Election 2025</a>
         </div>
       </div>
     </nav>
@@ -75,9 +85,7 @@ import GoogleAnalytics from '../components/GoogleAnalytics.astro';
         </div>
       </div>
     </footer>
-  </body>
-
-  <style is:global>
+  </body><style is:global>
     /* Simple, clean styles */
     :root {
       --primary-color: #0f4c81;
