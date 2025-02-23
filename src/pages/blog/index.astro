@@ -1,0 +1,89 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+// Get all blog posts using getCollection
+const allPosts = await getCollection('blog');
+
+// Sort posts by date
+const posts = allPosts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Layout title="Blog | PoliSync" description="Read our latest insights">
+  <div class="container">
+    <h1>Blog</h1>
+    <div class="post-grid">
+      {posts.map((post) => (
+        <article class="post-card">
+          <div class="post-content">
+            <h2>
+              <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+            </h2>
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
+            <p>{post.data.description}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+  }
+
+  .post-grid {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  @media (min-width: 768px) {
+    .post-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .post-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  h2 a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
+  h2 a:hover {
+    color: var(--primary-color);
+  }
+
+  time {
+    color: #666;
+    font-size: 0.9rem;
+    display: block;
+    margin: 0.5rem 0;
+  }
+</style>

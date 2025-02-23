@@ -1,0 +1,115 @@
+---
+interface Props {
+  post: {
+    slug: string;
+    data: {
+      title: string;
+      description: string;
+      pubDate: Date;
+      category?: string; // Made optional
+      tags: string[];
+      featured: boolean;
+      image?: {
+        url: string;
+        alt: string;
+      };
+    };
+  };
+}
+
+const { post } = Astro.props;
+const { slug, data } = post;
+---
+<article class="post-card">
+  {data.image && (
+    <img src={data.image.url} alt={data.image.alt} class="post-image" />
+  )}
+  <div class="post-content">
+    {data.category && (
+      <span class="category">{data.category}</span>
+    )}
+    <h2>
+      <a href={`/blog/${slug}`}>{data.title}</a>
+    </h2>
+    <time datetime={data.pubDate.toISOString()}>
+      {new Date(data.pubDate).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })}
+    </time>
+    <p>{data.description}</p>
+    {data.tags.length > 0 && (
+      <div class="tags">
+        {data.tags.map(tag => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+    )}
+  </div>
+</article>
+
+<style>
+  .post-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .post-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .post-content {
+    padding: 1.5rem;
+  }
+
+  .category {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+
+  h2 {
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+  }
+
+  h2 a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
+  h2 a:hover {
+    color: var(--primary-color);
+  }
+
+  time {
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  .tags {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    background: #f3f4f6;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+  }
+</style>
