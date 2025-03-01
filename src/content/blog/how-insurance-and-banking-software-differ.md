@@ -1,5 +1,5 @@
 ---
-title: "How Insurance and Banking Software Differ"
+title: "How Insurance and Banking Software Systems Differ"
 pubDate: 2024-10-06T01:06:47+02:00
 draft: false 
 weight: 8 
